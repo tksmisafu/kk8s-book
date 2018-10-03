@@ -1,1 +1,2 @@
-# fufu-book
+# Initial page
+
