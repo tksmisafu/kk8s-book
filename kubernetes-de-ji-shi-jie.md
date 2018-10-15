@@ -21,7 +21,9 @@ Kubernetes 系統有數項角色、名詞是不可能忽略的：
 * Kubernetes proxy
 * Kubernetes DNS
 * Kubernetes UI
-* **上述三項是 K8s集群元件**
+
+  **上述三項是 K8s集群元件**
+
 * NameSpace
 * Context
 * API服務 \ Scheduler \ Etcd
