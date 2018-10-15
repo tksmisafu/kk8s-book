@@ -26,21 +26,20 @@ Kubernetes 系統有數項角色、名詞是不可能忽略的：
 
 * NameSpace
 * Context
-* API服務 \ Scheduler \ Etcd
+* API服務  Scheduler  Etcd
 * POD
-* Label \ Annotation
+* Label  Annotation
 * Service
-* ReplicaSet \ DaemonSet
-* ConfigMap \ Secret
+* ReplicaSet  DaemonSet
+* ConfigMap  Secret
 * Deployment
 
-{% hint style="info" %}
-參考文章\出處：
+#### 參考文章\出處：
 
+* Kubernetes：建置與執行 \(Kubernetes: Up and Running: Dive into the Future of Infrastructure\)
 * [https://en.wikipedia.org/wiki/Kubernetes\#Architecture](https://en.wikipedia.org/wiki/Kubernetes#Architecture)
 * [https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/)
 * [https://ai.google/research/pubs/pub43438](https://ai.google/research/pubs/pub43438)
-{% endhint %}
 
 
 
