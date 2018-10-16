@@ -5,10 +5,11 @@ description: 什麼是Docker，什麼是Container ?  為什麼Container 不是Do
 # Why container is not Docker
 
 在使用上，Docker 大家或許比起 Container 還熟悉  
-我因應趨勢潮流，或許也算跟風“以正視聽”，嘗試表達以下等號、不等號  
-#### Docker == Container、Container != Docker
+我因應趨勢潮流，或許也算跟風“以正視聽”，嘗試表達以下等號、不等號
 
-### 所以我先說說 Container
+### Docker == Container、Container != Docker
+
+## 所以我先說說 Container
 
 Container 就是基於 Linux CGroups、NameSpace 等內核區隔技術並且共用內核情況下，將應用程式包裝於獨立沙盒執行環境。  
 Container 技術目標，是建立一個可以共用內核，相容Linux標準安裝程序又可“獨立”運作應用程式的環境。
@@ -19,16 +20,16 @@ Container 授權是 GNU LGPLv2.1+ 。
 Container 就是 Linux Container，簡稱 LXC。
 ```
 
-#### 參考文章\出處：
+### 參考文章\出處：
 
 * [https://zh.wikipedia.org/wiki/LXC](https://zh.wikipedia.org/wiki/LXC)
 * [https://linuxcontainers.org/lxc/introduction/](https://linuxcontainers.org/lxc/introduction/)
 
-### 回來說說 Docker
+## 回來說說 Docker
 
 Docker 的訴求，官網寫得很清楚～ [https://www.docker.com/](https://www.docker.com/)
 
-> #### Build, Manage and Secure Your Apps Anywhere.   Your Way.     The Dev to Ops Choice for Container Platforms.
+> ### Build, Manage and Secure Your Apps Anywhere.   Your Way.     The Dev to Ops Choice for Container Platforms.
 
 Docker 現今已經是一個邁向商業平台，意即 Container是容器化技術，運行容器化服務的平台 Docker是其一，K8S是其二。  
 Docker 其實就是運行 Container服務的 runtime平台，但更加發展有實質用途的功能應用，例如Container 可攜性、Build Images\Repo、可分布性等等。  
@@ -44,7 +45,7 @@ Docker 來自於容器技術開發公司 dotCloud。
 詳細資訊，請詳閱 iTHome 報導(連結如下)
 ```
 
-#### 參考文章\出處：
+### 參考文章\出處：
 
 * [https://www.docker.com/resources/what-container](https://www.docker.com/resources/what-container)
 * [https://www.ithome.com.tw/news/113899](https://www.ithome.com.tw/news/113899)
@@ -54,6 +55,7 @@ Docker 來自於容器技術開發公司 dotCloud。
 {% endhint %}
 
 {% hint style="info" %}
-這篇，我主要訴說兩者的差異，是從過往的發展，到相關標準的產生，這些角度來訴說。
+此篇，敘述目的在於 Container、Docker 之間微妙差異，以過往簡易歷程、相關標準的產生之這些角度來嘗試訴說。  
+後續相關K8s文章敘述中，會以 Container名詞為主，不是 Docker喔！
 {% endhint %}
 
