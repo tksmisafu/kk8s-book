@@ -4,7 +4,7 @@ description: 什麼是Docker，什麼是Container ?  為什麼Container 不是Do
 
 # Why container is not Docker
 
-#### 所以我先說說 Container
+### 所以我先說說 Container
 
 在使用上，Docker 大家或許比起 Container 還熟悉  
 Container 就是基於 Linux CGroups、NameSpace 等內核區隔技術並且共用內核情況下，將應用程式包裝於獨立沙盒執行環境。  
@@ -24,7 +24,7 @@ Container 就是 Linux Container，簡稱 LXC。
 * [https://zh.wikipedia.org/wiki/LXC](https://zh.wikipedia.org/wiki/LXC)
 * [https://linuxcontainers.org/lxc/introduction/](https://linuxcontainers.org/lxc/introduction/)
 
-#### 回來說說 Docker
+### 回來說說 Docker
 
 Docker 的訴求，官網寫得很清楚～ [https://www.docker.com/](https://www.docker.com/)
 
@@ -51,5 +51,9 @@ Docker 來自於容器技術開發公司 dotCloud。
 
 {% hint style="info" %}
 [OCI基金會](https://www.opencontainers.org/)：起始於2015年6月，由Docker與其他夥伴致力於推行出容器標準化，目前有兩項重要規範： Runtime Specification、Image Specification。
+{% endhint %}
+
+{% hint style="info" %}
+這篇，我主要訴說兩者的差異，是從過往的發展，到相關標準的產生，這些角度來訴說。
 {% endhint %}
 
