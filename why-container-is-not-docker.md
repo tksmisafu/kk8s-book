@@ -6,7 +6,7 @@ description: 什麼是Docker，什麼是Container ?  為什麼Container 不是Do
 
 在使用上，Docker 大家或許比起 Container 還熟悉  
 我因應趨勢潮流，或許也算跟風“以正視聽”，嘗試表達以下等號、不等號  
-\#Docker == Container、Container != Docker
+#### Docker == Container、Container != Docker
 
 ### 所以我先說說 Container
 
