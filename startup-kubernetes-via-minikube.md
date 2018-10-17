@@ -200,6 +200,10 @@ No resources found.
 Stopping local Kubernetes cluster...
 Machine stopped.
 
+[user@minikube ~]$ minikube status
+minikube: Stopped
+cluster:
+kubectl:
 ```
 
 此篇，主要先自我練習本機 K8s環境從無到建立，然後再啟動第一個pod / service等所做的步驟記錄，下一篇再予以介紹上述牽涉到的觀念。  
