@@ -35,6 +35,14 @@ etcd-0               Healthy   {"health": "true"}
 
 * etcd-0：儲存叢集內所有的資料，即是所謂的資料儲存庫；是Key / value 資料型態。
 
+#### _上述三項，都是運行在 Master node 上的三大角色，但別忽略了一件事情，起始一個新服務，是誰驅動\(調用\)這三個角色？_
+
+### 是「Kube-apiserver」
+
+* Master node 本身具有 Kube-apiserver 服務，其角色就是扮演 Master gateway～
+* 對外，提供 kubectl client 給予資源操作入口。
+* 對內，起於服務需求驅動 K8s node 完成服務建置。
+
 說明參考頁：  
 [https://kubernetes.io/docs/concepts/overview/components/\#master-components  
 ](https://kubernetes.io/docs/concepts/overview/components/
