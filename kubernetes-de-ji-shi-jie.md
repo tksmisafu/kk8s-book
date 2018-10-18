@@ -16,7 +16,7 @@ Kubernetes 系統有數項角色、名詞是不可能忽略的：
 * Scheduler
 * Etcd
 
-  **上述三項是 Master node 具有的元件**
+  **上述三項是** [**Master node 具有的元件**](https://fufu.gitbook.io/kk8s/master-node-component)\*\*\*\*
 
 * Kubernetes proxy
 * Kubernetes DNS
