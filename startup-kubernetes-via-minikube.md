@@ -122,10 +122,10 @@ deployment.apps/hello-minikube created
 NAME                              READY   STATUS    RESTARTS   AGE
 hello-minikube-7c77b68cff-l7smf   1/1     Running   0          26s
 
-# Expose it as a new Kubernetes Service
+# Expose it as a new Kubernetes Services
 [user@minikube ~]$ kubectl expose deployment hello-minikube --type=NodePort service/hello-minikube exposed
 
-[user@minikube ~]$ kubectl get service
+[user@minikube ~]$ kubectl get services
 NAME             TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
 hello-minikube   NodePort    10.97.245.120   <none>        8080:31944/TCP   9s
 kubernetes       ClusterIP   10.96.0.1       <none>        443/TCP          4h

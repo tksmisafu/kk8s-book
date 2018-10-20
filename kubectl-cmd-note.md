@@ -52,6 +52,8 @@ description: >-
 * 如果一個 pod 中有多個 container，可以使用`-c`另行指定 container。
 * 上述指令執行，如同 Linux`tail`指令即刻跳出輸出，如要讓 log 不斷輸出，可以加上`-f`命令。
 * 想進入 container bash 環境進行除錯， 可以執行指令：`kubectl exec -it my-pod --bash`
+* 想複製 pod container 中的檔案，可以執行指令 `kubectl cp <pod-name>:/path/abc.txt ~/abc.txt`
+* 反過來也可複製到 container 中：`kubectl cp ~/xyz.txt <pod-name>:/path/xyz.txt`
 
 {% hint style="info" %}
 參考書籍：  
