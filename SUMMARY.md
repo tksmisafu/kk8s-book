@@ -7,7 +7,7 @@
 * [K8s Master node Component 介紹](master-node-component.md)
 * [NameSpace、Deployments 概念說明](namespace-deployments-note.md)
 * [常見的 kubectl 指令](kubectl-cmd-note.md)
-* [回顧第一次部署，淺談 Pod、Deployments、Service](first-pod-deployment-service.md)
+* [回顧第一次部署，淺談 Pod、Deployment](first-pod-deployment.md)
 * [Untitled](untitled-2.md)
 * [kubectl describe nodes](untitled.md)
 * [kubectl get 筆記](kubectl-get.md)
