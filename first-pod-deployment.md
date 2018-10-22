@@ -1,6 +1,6 @@
 # 回顧第一次部署，淺談 Pod、Deployment
 
-#### 我在[此篇文章](https://fufu.gitbook.io/kk8s/startup-kubernetes-via-minikube#bu-shu-di-yi-service-pod)進行了第一次 Container 部署，以此範例淺談 Pod、Deployments、Service 基本概念。
+#### 我在[此篇文章](https://fufu.gitbook.io/kk8s/startup-kubernetes-via-minikube#bu-shu-di-yi-service-pod)進行了第一次 Container 部署，以此範例淺談 Pod、Deployments 基本概念。
 
 ### 淺談 Pod
 
