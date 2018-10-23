@@ -9,6 +9,7 @@
 * [常見的 kubectl 指令](kubectl-cmd-note.md)
 * [回顧第一次部署，淺談 Pod、Deployment](first-pod-deployment.md)
 * [回顧第一次部署，淺談 Service](first-service.md)
+* [今日來介紹 Pod 靜態文件～ Manifest](manifest-info.md)
 * [kubectl describe nodes](untitled.md)
 * [kubectl get 筆記](kubectl-get.md)
 * [kubectl 部署筆記](kubectl-bu-shu.md)

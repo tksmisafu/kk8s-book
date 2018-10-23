@@ -44,6 +44,11 @@ Events:                   <none>
 * 欄位 PORT\(S\) 看到 8080 埠，這是由 deployment 物件中 Port 定義並提取出來。
 * 10.97.219.147 此 IP 是虛擬 IP，存在於 pod 內的網路資訊。
 
+{% hint style="info" %}
+參考書籍：   
+**Kubernetes 建置與執行** 書中 P.78~79 內容
+{% endhint %}
+
 ### 開放 Service 給予外部存取
 
 在預設情況下，pod 物件僅能於叢集之間存取，但例如此篇案例 hello-minikube 是個 http 應用程式  
@@ -53,5 +58,8 @@ Events:                   <none>
   * 讓你無需關注 pod 運作在哪個 K8s node。
   * `NodePort:  <unset>  31472/TCP` 就是隨機產生的“埠”端口。
 
-
+{% hint style="info" %}
+參考書籍：   
+**Kubernetes 建置與執行** 書中 P.83 內容
+{% endhint %}
 
