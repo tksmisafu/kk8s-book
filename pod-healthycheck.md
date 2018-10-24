@@ -40,7 +40,9 @@ spec:
 2. 針對 http 服務可以定義`httpGet`請求，藉此獲得 http response 狀態，判斷此 http 程序是否正常運作。
 3. 針對 TCP Socket 連線狀態進行探測，可以定義`tcpSocket`。
 
-  
-   
-
+{% hint style="info" %}
+參考書籍\文章出處：   
+**Kubernetes 建置與執行** 書中 P.53 內容  
+[https://k8smeetup.github.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/](https://k8smeetup.github.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/)
+{% endhint %}
 
