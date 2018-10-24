@@ -10,7 +10,7 @@
 * [回顧第一次部署，淺談 Pod、Deployment](first-pod-deployment.md)
 * [回顧第一次部署，淺談 Service](first-service.md)
 * [今日來介紹 Pod 靜態文件～ Manifest](manifest-info.md)
-* [Pod 的健康檢查方式](pod-heathycheck.md)
+* [Pod 的健康檢查方式](pod-healthycheck.md)
 * [kubectl describe nodes](untitled.md)
 * [kubectl get 筆記](kubectl-get.md)
 * [kubectl 部署筆記](kubectl-bu-shu.md)
