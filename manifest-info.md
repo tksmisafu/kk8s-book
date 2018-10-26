@@ -29,7 +29,7 @@ hello-minikube-7c77b68cff-ncqmn   1/1     Running   1          4d
 
 舉下面例子建立複製版 hello-minikube，稱呼為 hello-kitty**，**先建立 kk8s/hello-kitty.yaml file
 
-```bash
+```yaml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -62,7 +62,7 @@ hello-minikube-7c77b68cff-ncqmn   1/1     Running   1          5d    172.17.0.4 
 
 透過 manifest 檔案部署 hello-moto deployments 物件，先建立 kk8s/hello-moto-deployment.yaml 檔案
 
-```bash
+```yaml
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:

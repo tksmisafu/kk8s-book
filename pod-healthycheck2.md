@@ -11,7 +11,7 @@ Readiness 是反過來，就在 Pod 未接受請求流量前就開始進行 pod 
 
 其配置方式與 Liveness 是相同地：
 
-```text
+```yaml
 # 以下僅是配置示意範本
 spec:
   containers:
@@ -61,4 +61,6 @@ Probe 配置中有很多依場景需求而定，盡可能滿足 liveness 和 rea
 **Kubernetes 建置與執行** 書中 P.55  P.81 內容  
 [https://k8smeetup.github.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/](https://k8smeetup.github.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/) [https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/\#define-readiness-probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/#define-readiness-probes)
 {% endhint %}
+
+
 
