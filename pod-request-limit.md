@@ -38,6 +38,13 @@ spec:
         cpu: "1.5"
 ```
 
+cpu 以 mili cpu 為單位表示，以 value + m 後綴字呈現，例如 1000mili cpu 以 1000m 表達～  
+1000m = 1 cpu = 1 核心意思；500m = 0.5 核心～
+
+
+
+
+
 {% hint style="info" %}
 參考書籍：  
 **Kubernetes 建置與執行** 書中 P.56~59
