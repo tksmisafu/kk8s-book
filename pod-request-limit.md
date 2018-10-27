@@ -22,6 +22,7 @@ K8s Pod 裡頭有兩種不同用途的資源定義：
 當 Pod Manifest 中定義了`limit`時，K8s 底層核心確保 Container 運作上不超過定義中的上限。
 
 * 當 K8s **node-1** 僅運行一個 Pod container \(`cpu 1500m / memory 1024Mi`\)，即使 **node-1** 仍有閒置的資源，仍不為此 container 可用的資源。
+* 如果沒有定義 CPU、RAM Limit 則 Container 可用資源是無上限的，實際依據 node 資源為上限。
 
 ### 配置方式、單位說明
 
@@ -38,15 +39,17 @@ spec:
         cpu: "1.5"
 ```
 
-cpu 以 mili cpu 為單位表示，以 value + m 後綴字呈現，例如 1000mili cpu 以 1000m 表達～  
+CPU 以 mili cpu 為單位表示，以 value + m 後綴表達，例如 1000mili cpu 以 1000m 表達～  
 1000m = 1 cpu = 1 核心意思；500m = 0.5 核心～
 
-
-
-
+RAM 以 byte 為計算單位，可以透過 G, M, K, Gi, Mi, Ki 作為後綴表達單位，例如：  
+`128974848 = 129e6 = 129M = 123Mi`
 
 {% hint style="info" %}
-參考書籍：  
-**Kubernetes 建置與執行** 書中 P.56~59
+參考書籍/文章出處：  
+**Kubernetes 建置與執行** 書中 P.56~59  
+[https://k8smeetup.github.io/docs/tasks/configure-pod-container/assign-cpu-ram-container/](https://k8smeetup.github.io/docs/tasks/configure-pod-container/assign-cpu-ram-container/)
 {% endhint %}
+
+
 
