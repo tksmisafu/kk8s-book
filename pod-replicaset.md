@@ -51,7 +51,7 @@ spec:
 現在主流 K8s 會建議透過 Deployments 控制器進行 Pod 副本管理，  
 其本質就是由 Deployments 去調用 replicaSet 完成副本相關工作，  
 但是多了重要功能：**rolling-update**  
-我們在[這篇](https://fufu.gitbook.io/kk8s/first-pod-deployment#deployment)，有介紹過 Deployments 用途～
+我們在[這篇](https://fufu.gitbook.io/kk8s/first-pod-deployment#deployment)文章中，有介紹過 Deployments 用途～
 
 {% hint style="info" %}
 參考書籍\文章出處：  
