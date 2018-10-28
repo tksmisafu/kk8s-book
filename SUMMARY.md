@@ -14,6 +14,7 @@
 * [Pod 的健康檢查方式 Part-2](pod-healthycheck2.md)
 * [Pod 的資源請求、上限](pod-request-limit.md)
 * [Pod 資料，如何持久化存放、讀取](pod-persistentvolume.md)
+* [Pod 副本管理～ 描述 ReplicaSet 控制器](pod-replicaset.md)
 * [kubectl describe nodes](untitled.md)
 * [kubectl get 筆記](kubectl-get.md)
 * [kubectl 部署筆記](kubectl-bu-shu.md)
