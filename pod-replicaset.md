@@ -43,7 +43,7 @@ spec:
         image: "k8s.gcr.io/echoserver:1.10"
 ```
 
-### 歷史洪流資訊
+### 功能迭代，過去與主流
 
 過去有個 ReplicationController 功能，與相較起來，除了其本質是相同的功能與應用，  
 另外名稱不同外，現在主流 ReplicaSet 功能還多了 set-based selector。
