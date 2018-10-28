@@ -21,9 +21,9 @@ Reconciliation Loops 中文譯：調節迴圈
 ReplicaSet 根據 K8s API 回傳的 Pod Status，進行相對應的 replica 動作。
 
 * ReplicaSet 就像其他 K8s 物件一樣，透過宣告式進行定義。
-* ReplicaSet 在 metadata.name 欄位中必須有唯一的名稱。
-* spec.replicas 欄位定義運行指定的 pod 之數量。
-* spec.containers 定義著 pod 所運行的 container 模板。
+* ReplicaSet 在`metadata.name`欄位中必須有唯一的名稱。
+* `spec.replicas`欄位定義運行指定的 pod 之數量。
+* `spec.containers`定義著 pod 所運行的 container 模板。
 * ReplicaSet 定義範例：
 
 ```yaml
@@ -51,5 +51,5 @@ spec:
 現在主流 K8s 會建議透過 Deployments 控制器進行 Pod 副本管理，  
 其本質就是由 Deployments 去調用 replicaSet 完成副本相關工作，  
 但是多了重要功能：**rolling-update**  
-我們在這篇，有介紹過 Deployments 用途～
+我們在[這篇](https://fufu.gitbook.io/kk8s/first-pod-deployment#deployment)，有介紹過 Deployments 用途～
 
