@@ -53,3 +53,8 @@ spec:
 但是多了重要功能：**rolling-update**  
 我們在[這篇](https://fufu.gitbook.io/kk8s/first-pod-deployment#deployment)，有介紹過 Deployments 用途～
 
+{% hint style="info" %}
+參考書籍\文章出處：  
+Kubernetes 建置與執行 書中 P.93~98 內容 [https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/) [https://jimmysong.io/kubernetes-handbook/concepts/replicaset.html](https://jimmysong.io/kubernetes-handbook/concepts/replicaset.html)
+{% endhint %}
+
