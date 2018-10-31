@@ -13,7 +13,7 @@
 * 針對產品：ERP、eCommerce、Cloud
 
 這些標籤，也可以複數使用，具體舉例～  
-eCommerce 電子商務系統中的任何服務，皆有個 Label = eCommerce  
+eCommerce 電子商務系統中的任何服務，皆有個 Label`PROD=eC`  
 其中負責網頁服務的 http pod 物件，有地區性及環境等等區別，那電子商務系統的 http pod，就會有下列的清單：
 
 ```text
