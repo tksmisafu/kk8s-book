@@ -43,7 +43,8 @@ spec:
 ```
 
 上述 Service`hello-minikube` 中，會在叢集中 Listen 8080 埠端口，並且將流量傳送至後端同時符合`app=hello-minikube`&`env=demo`兩條件的 **pod** \(Listen 8080\)。  
-以上，描述了 **Service** 與 **Label** 之間重要關係～  
+以上，描述了 **Service** 與 **Label** 之間重要關係～
+
 那有個新問題：Service 如何透過 Label 去得知哪些符合條件 **pod** 的真實網路、埠端口資訊呢？  
 （如果不用知道 **pod** 真實資訊，流量網路層就無法傳遞囉！）
 
