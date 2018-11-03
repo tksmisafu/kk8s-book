@@ -19,6 +19,7 @@
 * [淺談 DaemonSet，及相對 ReplicaSet 的差異](daemonset-note.md)
 * [來說說 Label](label-note.md)
 * [從 Label 再回頭談 Service](label-to-service.md)
+* [Service 續集之 Cluster IP](cluster-ip.md)
 * [kubectl describe nodes](untitled.md)
 * [kubectl get 筆記](kubectl-get.md)
 * [kubectl 部署筆記](kubectl-bu-shu.md)
