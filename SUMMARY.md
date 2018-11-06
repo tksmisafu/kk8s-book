@@ -22,6 +22,7 @@
 * [Service 續集之 Cluster IP、Kube-proxy](cluster-ip-kube-proxy.md)
 * [從 Service 發現 K8s 網路層全貌](k8s-service-networking.md)
 * [Container Data Persistent](container-data-persistent.md)
+* [發現、初談 StatefulSet](statefulset-1.md)
 * [kubectl describe nodes](untitled.md)
 * [kubectl get 筆記](kubectl-get.md)
 * [kubectl 部署筆記](kubectl-bu-shu.md)
