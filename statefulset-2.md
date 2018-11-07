@@ -54,16 +54,16 @@ $(namespace) 是服務所在的 namespace，Headless Service 和 StatefulSet 需
 
 * **StorageClass** 透過 PV 的類別\(等級\)名稱，來定義 PV 的類別屬性，方便管理者去分門別類儲存屬性，例如 High/Slow IO
 * 建立 StorageClass 時，管理員設置名稱與相關參數，一但建立後不可再對其進行更新。
-* 一個有指定 `StorageClassName` 的 PV，只許被相同 `StorageClassName` 的 PVC 綁定請求。
-* 一個沒指定 `StorageClassName` 的 PV，只有無指定 `StorageClassName` 的 PVC 綁定請求。
+* 一個有指定`StorageClassName`的 PV，只許被相同`StorageClassName`的 PVC 綁定請求。
+* 一個沒指定`StorageClassName`的 PV，只有無指定`StorageClassName`的 PVC 綁定請求。
 
 K8s API server 上的 **DefaultStorageClass** 是否啟用，攸關到 StorageClass default 的變因。
 
-* 如啟用，可以設定 default **StorageClassName**，當 PVC 中沒有設置 `StorageClassName`，則會套用 default **StorageClassName**。
-* 如啟用，但沒設定 default `StorageClassName`，當 PVC 創建時 K8s 會回應。
+* 如啟用，可以設定 default **StorageClassName**，當 PVC 中沒有設置`StorageClassName`，則會套用 default **StorageClassName**。
+* 如啟用，但沒設定 default`StorageClassName`，當 PVC 創建時 K8s 會回應。
 * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 * 如沒啟用，則就沒有 StorageClass 概念；
-* 在此情況，没有 `storageClassName` 的 PVC 與 「 `storageClassName: ""`的 PVC 」 的處理方式相同。
+* 在此情況，没有`storageClassName`的 PVC 與 「`storageClassName: ""`的 PVC 」 的處理方式相同。
 
 {% hint style="info" %}
 參考書籍\文章出處：   
