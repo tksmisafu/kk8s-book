@@ -38,5 +38,10 @@ $(namespace) 是服務所在的 namespace，Headless Service 和 StatefulSet 需
 .cluster.local 是 Cluster Domain。
 ```
 
+{% hint style="info" %}
+參考書籍\文章出處：   
+Kubernetes 建置與執行 書中 P.180~181 內容。 [https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/) [https://jimmysong.io/kubernetes-handbook/concepts/statefulset.html](https://jimmysong.io/kubernetes-handbook/concepts/statefulset.html) [https://feisky.gitbooks.io/kubernetes/concepts/statefulset.html](https://feisky.gitbooks.io/kubernetes/concepts/statefulset.html)​
+{% endhint %}
+
 
 
