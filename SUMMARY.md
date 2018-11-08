@@ -24,7 +24,7 @@
 * [Container Data Persistent](container-data-persistent.md)
 * [發現、初談 StatefulSet](statefulset-1.md)
 * [再談 StatefulSet](statefulset-2.md)
-* [第一次使用 Play with Kubernetes](di-yi-ci-shi-yong-play-with-kubernetes.md)
+* [第一次使用 Play with Kubernetes](first-play-with-k8s.md)
 * [kubectl describe nodes](untitled.md)
 * [kubectl get 筆記](kubectl-get.md)
 * [kubectl 部署筆記](kubectl-bu-shu.md)
