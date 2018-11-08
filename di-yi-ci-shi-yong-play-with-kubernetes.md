@@ -8,7 +8,8 @@ description: 'https://labs.play-with-k8s.com'
 此網站工具僅需具備 github or Docker 帳號即可登入使用～  
 登入後，先點選左邊畫面 + ADD NEW INSTANCE，新增節點
 
-!\[11\]\([https://photos.app.goo.gl/KZrafbX1kbMLMphi7](https://photos.app.goo.gl/KZrafbX1kbMLMphi7)\)
+22
+![11](https://photos.app.goo.gl/KZrafbX1kbMLMphi7)
 
 
 
