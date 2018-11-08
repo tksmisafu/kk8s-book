@@ -1,7 +1,3 @@
----
-description: Master node 有什麼狠角色，各別是什麼用途，透過此篇初步認識。
----
-
 # K8s Master node Component 介紹
 
 當透過 minikube 完成 Local K8s 環境建置後，下指令：`kubectl get componentstatuses` 可查看到 K8s 三個主要狠角色。

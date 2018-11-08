@@ -1,7 +1,3 @@
----
-description: notes
----
-
 # kubectl get 筆記
 
 ```bash

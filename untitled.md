@@ -1,7 +1,3 @@
----
-description: notes
----
-
 # kubectl describe nodes
 
 ```bash
