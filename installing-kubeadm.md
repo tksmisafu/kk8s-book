@@ -145,5 +145,10 @@ Nov  9 14:26:13 localhost systemd: kubelet.service failed.
 # 問題先留著，下一篇會 fix
 ```
 
+{% hint style="info" %}
+文章出處：  
+[https://kubernetes.io/docs/setup/independent/install-kubeadm/](https://kubernetes.io/docs/setup/independent/install-kubeadm/)
+{% endhint %}
+
 下一篇，準備往 [Using kubeadm to Create a Cluster](https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/) 邁進。
 
