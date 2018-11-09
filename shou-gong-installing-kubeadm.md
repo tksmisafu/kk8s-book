@@ -29,53 +29,32 @@
 
 ```
 
-### Installing kubeadm, kubelet and kubectl <a id="installing-kubeadm-kubelet-and-kubectl"></a>
-
-```bash
-# 設定 hostname
-sudo hostname -b kk8s-1
-
-# 新增 repo
-sudo vi /etc/yum.repos.d/kubernetes.repo
-#
-[kubernetes]
-name=Kubernetes
-baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
-enabled=1
-gpgcheck=1
-repo_gpgcheck=1
-gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
-exclude=kube*
-#
-# Set SELinux in permissive mode (effectively disabling it)
-sudo setenforce 0
-sudo sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
-
-# 安裝 kubelet kubeadm kubectl
-yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
-
-# 確認套件版本資訊
-[vagrant@kk8s-1 ~]$ kube
-kubeadm  kubectl  kubelet
-
-[vagrant@kk8s-1 ~]$ kubeadm version
-kubeadm version: &version.Info{Major:"1", Minor:"12", GitVersion:"v1.12.2", GitCommit:"17c77c7898218073f14c8d573582e8d2313dc740", GitTreeState:"clean", BuildDate:"2018-10-24T06:51:33Z", GoVersion:"go1.10.4", Compiler:"gc", Platform:"linux/amd64"}
-
-[vagrant@kk8s-1 ~]$ kubectl version
-Client Version: version.Info{Major:"1", Minor:"12", GitVersion:"v1.12.2", GitCommit:"17c77c7898218073f14c8d573582e8d2313dc740", GitTreeState:"clean", BuildDate:"2018-10-24T06:54:59Z", GoVersion:"go1.10.4", Compiler:"gc", Platform:"linux/amd64"}
-The connection to the server localhost:8080 was refused - did you specify the right host or port?
-
-[vagrant@kk8s-1 ~]$ kubelet --version
-Kubernetes v1.12.2
-```
-
 ### 環境需求
 
 ```bash
 # for CentOS
+# 設定 hostname
+sudo hostname -b kk8s-1
+
+# 1. 關閉 SWAP
+[vagrant@kk8s-1 ~]$ sudo swapoff -a
+[vagrant@kk8s-1 ~]$ sudo vi /etc/fstab
+#
+/dev/mapper/VolGroup00-LogVol00 /                       xfs     defaults        0 0
+UUID=570897ca-e759-4c81-90cf-389da6eee4cc /boot                   xfs     defaults        0 0
+#/dev/mapper/VolGroup00-LogVol01 swap                    swap    defaults        0 0
+
+# 2. Set SELinux in permissive mode (effectively disabling it)
+sudo setenforce 0
+sudo sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
+
+# 3. Some users on RHEL/CentOS 7 have reported issues with traffic being routed incorrectly due to iptables being bypassed.
+# You should ensure net.bridge.bridge-nf-call-iptables is set to 1 in your sysctl config,
+# e.g.
 [vagrant@kk8s-1 ~]$ sudo vi /etc/sysctl.d/k8s.conf
     net.bridge.bridge-nf-call-ip6tables = 1
     net.bridge.bridge-nf-call-iptables = 1
+    vm.swappiness=0
     
 [vagrant@kk8s-1 ~]$ sudo sysctl --system
 * Applying /usr/lib/sysctl.d/00-system.conf ...
@@ -98,10 +77,45 @@ fs.protected_symlinks = 1
 [vagrant@kk8s-1 ~]$
 ```
 
+### Installing kubeadm, kubelet and kubectl <a id="installing-kubeadm-kubelet-and-kubectl"></a>
+
+```bash
+# 新增 repo
+sudo vi /etc/yum.repos.d/kubernetes.repo
+#
+[kubernetes]
+name=Kubernetes
+baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+enabled=1
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+exclude=kube*
+#
+
+# 安裝 kubelet kubeadm kubectl
+yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
+
+# 確認套件版本資訊
+[vagrant@kk8s-1 ~]$ kube
+kubeadm  kubectl  kubelet
+
+[vagrant@kk8s-1 ~]$ kubeadm version
+kubeadm version: &version.Info{Major:"1", Minor:"12", GitVersion:"v1.12.2", GitCommit:"17c77c7898218073f14c8d573582e8d2313dc740", GitTreeState:"clean", BuildDate:"2018-10-24T06:51:33Z", GoVersion:"go1.10.4", Compiler:"gc", Platform:"linux/amd64"}
+
+[vagrant@kk8s-1 ~]$ kubectl version
+Client Version: version.Info{Major:"1", Minor:"12", GitVersion:"v1.12.2", GitCommit:"17c77c7898218073f14c8d573582e8d2313dc740", GitTreeState:"clean", BuildDate:"2018-10-24T06:54:59Z", GoVersion:"go1.10.4", Compiler:"gc", Platform:"linux/amd64"}
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
+
+[vagrant@kk8s-1 ~]$ kubelet --version
+Kubernetes v1.12.2
+```
+
 ### 啟動 kubelet
 
 ```bash
 [vagrant@kk8s-1 ~]$ sudo systemctl enable kubelet && sudo systemctl start kubelet
+Created symlink from /etc/systemd/system/multi-user.target.wants/kubelet.service to /etc/systemd/system/kubelet.service.
 
 [vagrant@kk8s-1 ~]$ sudo systemctl status kubelet
 ● kubelet.service - kubelet: The Kubernetes Node Agent
@@ -127,6 +141,8 @@ Nov  9 14:26:13 localhost kubelet: F1109 14:26:13.714784    3515 server.go:190] 
 Nov  9 14:26:13 localhost systemd: kubelet.service: main process exited, code=exited, status=255/n/a
 Nov  9 14:26:13 localhost systemd: Unit kubelet.service entered failed state.
 Nov  9 14:26:13 localhost systemd: kubelet.service failed.
+
+# 問題先留著，下一篇會 fix
 ```
 
 下一篇，準備往 [Using kubeadm to Create a Cluster](https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/) 邁進。
