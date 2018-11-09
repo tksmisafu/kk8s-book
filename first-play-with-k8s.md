@@ -47,24 +47,6 @@ Your Kubernetes master has initialized successfully!
 
 ```
 
-當完成步驟 1.`Initializes cluster master node`之後，此 instance 即成為 **Master node**  
-步驟完成後，會提供`kubectl join`指令（如下）  
-`kubeadm join 192.168.0.13:6443 --token 6bcc6s.zkvi8hv0hhpxkd1v --discovery-token-ca-cert-hash sha256:9ceb947c39b2a4e10396d846dfda4cba9d27958ee687eb9b406cff0400f27223`  
-  
-接著於左邊環境繼續 _**+ ADD NEW INSTANCE**_，例如新增三個 K8s node  
-透過`kubectl join`指令將三個新 instance join 到第一台 instance 成為 work-nodes。  
-新增後，在 Master node 上，查看資訊：
-
-```bash
-[node1 ~]$ kubectl get nodes
-NAME      STATUS     ROLES     AGE       VERSION
-node1     NotReady   master    5m        v1.11.3
-node2     NotReady   <none>    2m        v1.11.3
-node3     NotReady   <none>    1m        v1.11.3
-node4     NotReady   <none>    39s       v1.11.3
-[node1 ~]$
-```
-
 完成 Master\work node 基礎節點之後，進行步驟 2
 
 ```bash
@@ -77,6 +59,24 @@ clusterrolebinding.rbac.authorization.k8s.io/weave-net created
 role.rbac.authorization.k8s.io/weave-net created
 rolebinding.rbac.authorization.k8s.io/weave-net created
 daemonset.extensions/weave-net created
+[node1 ~]$
+```
+
+當完成上面步驟 1.`Initializes cluster master node`之後，此 instance 即成為 **Master node**  
+步驟完成後，會提供`kubectl join`指令（如下）  
+`kubeadm join 192.168.0.13:6443 --token 6bcc6s.zkvi8hv0hhpxkd1v --discovery-token-ca-cert-hash sha256:9ceb947c39b2a4e10396d846dfda4cba9d27958ee687eb9b406cff0400f27223`  
+  
+此時於左邊環境繼續 _**+ ADD NEW INSTANCE**_，例如新增三個 K8s node  
+透過`kubectl join`指令將三個新 instance join 到第一台 instance 成為 work-nodes。  
+新增後，在 Master node 上，查看資訊：
+
+```bash
+[node1 ~]$ kubectl get node
+NAME      STATUS    ROLES     AGE       VERSION
+node1     Ready     master    4m        v1.11.3
+node2     Ready     <none>    2m        v1.11.3
+node3     Ready     <none>    1m        v1.11.3
+node4     Ready     <none>    58s       v1.11.3
 [node1 ~]$
 ```
 
