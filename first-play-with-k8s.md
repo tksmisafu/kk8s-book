@@ -47,7 +47,7 @@ Your Kubernetes master has initialized successfully!
 
 ```
 
-完成 Master\work node 基礎節點之後，進行步驟 2
+完成 Master node 初始化節點之後，進行步驟 2
 
 ```bash
 # 2. Initialize cluster networking:
