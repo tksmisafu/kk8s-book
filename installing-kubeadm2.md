@@ -1,4 +1,4 @@
-# 手工 Installing kubeadm-2
+# 手工 Installing CRI-O、kubeadm init
 
 上一篇，其實少裝了一個重要角色 Container Runtime Interface，簡稱 CRI  
 這一篇，來裝吧～
@@ -79,10 +79,62 @@ Dependency Updated:
 
 ```
 
+#### Start CRI-O
 
+```bash
+[vagrant@kk8s-1 ~]$ sudo systemctl start crio
+[vagrant@kk8s-1 ~]$
+[vagrant@kk8s-1 ~]$ sudo systemctl status crio
+● crio.service - Open Container Initiative Daemon
+   Loaded: loaded (/usr/lib/systemd/system/crio.service; disabled; vendor preset: disabled)
+   Active: active (running) since Sat 2018-11-10 11:52:18 UTC; 3s ago
+     Docs: https://github.com/kubernetes-sigs/cri-o
+ Main PID: 16765 (crio)
+   CGroup: /system.slice/crio.service
+           └─16765 /usr/bin/crio
+
+Nov 10 11:52:18 kk8s-1 systemd[1]: Starting Open Container Initiative Daemon...
+Nov 10 11:52:18 kk8s-1 crio[16765]: time="2018-11-10 11:52:18.905802494Z" level=error msg="watcher.Add("/usr/share/containers/oci/hooks.d") failed: no such file or directory"
+Nov 10 11:52:18 kk8s-1 systemd[1]: Started Open Container Initiative Daemon.
+
+# 上述出現一個 error，透過 Google 搜尋後發現需要 hook 目錄，重啟 crio 即可。
+# https://github.com/containers/libpod/blob/master/pkg/hooks/docs/oci-hooks.5.md
+[vagrant@kk8s-1 ~]$ sudo mkdir /usr/share/containers/oci/
+[vagrant@kk8s-1 ~]$ sudo mkdir /usr/share/containers/oci/hooks.d
+[vagrant@kk8s-1 ~]$ sudo systemctl restart crio
+[vagrant@kk8s-1 ~]$ crio --version
+crio version 1.11.8
+```
+
+### kubeadm init
+
+```bash
+# 因 Lab 環境有兩個網路介面，為了確定 kubeadm 抓取正確的 IP 參數，透過 hosts 確認主機名稱解析的 IP。
+sudo vi /etc/hosts
+
+# 初始化叢集 Master node
+sudo kubeadm init --apiserver-advertise-address=192.168.42.191
+# 因預設 kubeadm init 會偵測環境中 docker 要素但我沒安裝 docker！
+# [preflight] WARNING: Couldn't create the interface used for talking to the container runtime: docker is required for container runtime: exec: "docker": executable file not found in $PATH
+# 我採用 CRI-O 作為 Container Runtime，故 init arg 需增加 --cri-socket，如下：
+sudo kubeadm init --cri-socket="/var/run/crio/crio.sock" --apiserver-advertise-address=192.168.42.191
+
+### 結果失敗，主因出在 kubelet 服務上～只好繼續排查問題。
+# 下篇繼續～
+```
+
+{% hint style="danger" %}
+This error is likely caused by:
+
+* The kubelet is not running
+* The kubelet is unhealthy due to a misconfiguration of the node in some way \(required cgroups disabled\)
+{% endhint %}
 
 {% hint style="info" %}
 文章出處：  
+[https://kubernetes.io/docs/setup/independent/install-kubeadm/\#installing-runtime](https://kubernetes.io/docs/setup/independent/install-kubeadm/#installing-runtime)  
 [https://kubernetes.io/docs/setup/cri/\#prerequisites](https://kubernetes.io/docs/setup/cri/#prerequisites)
 {% endhint %}
+
+
 
