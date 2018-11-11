@@ -9,7 +9,7 @@ failed to load Kubelet config file /var/lib/kubelet/config.yaml
 
 ### Fix kubeadm init
 
-在這篇 “手工 Installing CRI-O、kubeadm init” 過程裡，kubeadm init 並沒有順利完成初始化目的  
+在這篇 “[手工 Installing CRI-O、kubeadm init](https://fufu.gitbook.io/kk8s/installing-crio-kubeadm-init)” 過程裡，kubeadm init 並沒有順利完成初始化目的  
 先從 log 查看：
 
 ```bash
