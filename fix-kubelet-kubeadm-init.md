@@ -2,7 +2,7 @@
 
 ### Fix failed to load Kubelet
 
-在這篇 “手工 Installing kubeadm” 文末，出現錯誤訊息：  
+在這篇 “[手工 Installing kubeadm](https://fufu.gitbook.io/kk8s/installing-kubeadm)” 文末，出現錯誤訊息：  
 failed to load Kubelet config file /var/lib/kubelet/config.yaml  
 是可以省略的，原因是在進行 kubeadm init 步驟階段，會自行產生。  
 這是自己在進行 kubeadm init 步驟發現的情況。
