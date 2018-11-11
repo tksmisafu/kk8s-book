@@ -129,3 +129,7 @@ kk8s-1   Ready    master   16m   v1.12.2
 
 #### 很高興完成自己環境中的 kubeadm init 里程碑 ＾o＾
 
+文章出處：  
+[https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/](https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/)  
+[https://blog.csdn.net/zzq900503/article/details/81710319](https://blog.csdn.net/zzq900503/article/details/81710319)
+
