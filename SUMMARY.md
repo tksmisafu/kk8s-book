@@ -27,6 +27,7 @@
 * [第一次使用 Play with Kubernetes](first-play-with-k8s.md)
 * [手工 Installing kubeadm](installing-kubeadm.md)
 * [手工 Installing CRI-O、kubeadm init](installing-kubeadm2.md)
+* [繼上篇，排查 kubelet、kubeadm init 問題](fix-kubelet-kubeadm-init.md)
 * [kubectl describe nodes](untitled.md)
 * [kubectl get 筆記](kubectl-get.md)
 * [kubectl 部署筆記](kubectl-bu-shu.md)
