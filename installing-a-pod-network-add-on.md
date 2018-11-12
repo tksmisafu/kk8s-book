@@ -250,3 +250,12 @@ kk8s-1   Ready    master   93m   v1.12.2
 以上，過程中出現的問題，或許有解法直接新環境重建就好～  
 但是，Lab 能夠發現問題，並找出問題根源，了解到故中原理才是我最開心最有收穫之處。
 
+{% hint style="info" %}
+文章出處：  
+[https://tachingchen.com/tw/blog/kubernetes-installation-with-kubeadm/](https://tachingchen.com/tw/blog/kubernetes-installation-with-kubeadm/)  
+[https://kairen.github.io/2016/09/29/kubernetes/deploy/kubeadm/](https://kairen.github.io/2016/09/29/kubernetes/deploy/kubeadm/)  
+[https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/\#pod-network](https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/#pod-network)  
+[https://kubernetes.io/docs/setup/independent/troubleshooting-kubeadm/\#pods-in-runcontainererror-crashloopbackoff-or-error-state](https://kubernetes.io/docs/setup/independent/troubleshooting-kubeadm/#pods-in-runcontainererror-crashloopbackoff-or-error-state)  
+[https://github.com/kubernetes/kubernetes/issues/39557](https://github.com/kubernetes/kubernetes/issues/39557)
+{% endhint %}
+
