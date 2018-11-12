@@ -28,6 +28,7 @@
 * [手工 Installing kubeadm](installing-kubeadm.md)
 * [手工 Installing CRI-O、kubeadm init](installing-crio-kubeadm-init.md)
 * [繼上篇，排查 kubelet、kubeadm init 問題](fix-kubelet-kubeadm-init.md)
+* [Installing a pod network add-on](installing-a-pod-network-add-on.md)
 * [kubectl describe nodes](untitled.md)
 * [kubectl get 筆記](kubectl-get.md)
 * [kubectl 部署筆記](kubectl-bu-shu.md)
