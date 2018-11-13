@@ -37,8 +37,8 @@
 #### Prerequisites <a id="prerequisites"></a>
 
 ```bash
-modprobe overlay
-modprobe br_netfilter
+sudo modprobe overlay
+sudo modprobe br_netfilter
 
 # Setup required sysctl params, these persist across reboots.
 [vagrant@kk8s-1 ~]$ sudo vi /etc/sysctl.d/k8s.conf
@@ -83,7 +83,7 @@ Dependency Updated:
 
 ```bash
 [vagrant@kk8s-1 ~]$ sudo systemctl start crio
-[vagrant@kk8s-1 ~]$
+[vagrant@kk8s-1 ~]$ sudo systemctl enable crio
 [vagrant@kk8s-1 ~]$ sudo systemctl status crio
 ● crio.service - Open Container Initiative Daemon
    Loaded: loaded (/usr/lib/systemd/system/crio.service; disabled; vendor preset: disabled)

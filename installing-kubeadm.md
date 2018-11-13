@@ -94,7 +94,7 @@ exclude=kube*
 #
 
 # 安裝 kubelet kubeadm kubectl
-yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
+sudo yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
 
 # 確認套件版本資訊
 [vagrant@kk8s-1 ~]$ kube
