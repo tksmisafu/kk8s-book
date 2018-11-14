@@ -30,7 +30,7 @@
 * [繼上篇，排查 kubelet、kubeadm init 問題](fix-kubelet-kubeadm-init.md)
 * [Installing a pod network add-on](installing-a-pod-network-add-on.md)
 * [K8s add Nodes（join）](k8s-add-nodes-join.md)
-* [驗證自建的 K8s](zi-jian-de-k8s.md)
+* [驗證自建的 K8s](verification-kk8s.md)
 * [kubectl describe nodes](untitled.md)
 * [kubectl get 筆記](kubectl-get.md)
 * [kubectl 部署筆記](kubectl-bu-shu.md)
