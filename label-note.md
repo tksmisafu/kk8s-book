@@ -47,8 +47,18 @@ Value 僅需是值或者字元呈現，並與“名稱”有相同規範。
 
 ```
 
+### 指令說明
+
+```bash
+# 針對所有 pods 設定同一個 label
+kubectl label pods --all env=prod
+
+```
+
 {% hint style="info" %}
 參考書籍\文章出處：   
 Kubernetes 建置與執行 書中 P.65~66 內容
 {% endhint %}
+
+
 
