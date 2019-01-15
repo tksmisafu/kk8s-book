@@ -16,17 +16,15 @@
 
 ```bash
 # 下載 minikube
-[user@minikube ~]$ curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.30.0/minikube-linux-amd64 && chmod +x minikube && sudo cp minikube /usr/local/bin/ && rm minikube
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 \
+  && sudo install minikube-linux-amd64 /usr/local/bin/minikube
 minikube version
-minikube version: v0.30.0
-# 下載 kubectl
-curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
-chmod +x ./kubectl
-sudo mv ./kubectl /usr/local/bin/kubectl
+minikube version: v0.32.0
 
-[user@minikube ~]$ kubectl version
-Client Version: version.Info{Major:"1", Minor:"12", GitVersion:"v1.12.1", GitCommit:"4ed3216f3ec431b140b1d899130a69fc671678f4", GitTreeState:"clean", BuildDate:"2018-10-05T16:46:06Z", GoVersion:"go1.10.4", Compiler:"gc", Platform:"linux/amd64"}
-The connection to the server localhost:8080 was refused - did you specify the right host or port?
+# 下載 kubectl
+curl -Lo kubectl https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl \
+&& chmod +x kubectl && sudo cp kubectl /usr/local/bin/ && rm kubectl
+
 ```
 
 ```bash
@@ -52,22 +50,23 @@ kubectl:
 
 ```bash
 [user@minikube ~]$ minikube start
-Starting local Kubernetes v1.10.0 cluster...
+Starting local Kubernetes v1.12.4 cluster...
 Starting VM...
 Downloading Minikube ISO
- 170.78 MB / 170.78 MB [============================================] 100.00% 0s
+ 178.88 MB / 178.88 MB [============================================] 100.00% 0s
 Getting VM IP address...
 Moving files into cluster...
-Downloading kubeadm v1.10.0
-Downloading kubelet v1.10.0
-Finished Downloading kubelet v1.10.0
-Finished Downloading kubeadm v1.10.0
 Setting up certs...
 Connecting to cluster...
 Setting up kubeconfig...
+Stopping extra container runtimes...
 Starting cluster components...
-Kubectl is now configured to use the cluster.
+Verifying kubelet health ...
+Verifying apiserver health ...Kubectl is now configured to use the cluster.
 Loading cached images from config file.
+
+
+Everything looks great. Please enjoy minikube!
 
 ```
 
@@ -83,9 +82,8 @@ kubectl: Correctly Configured: pointing to minikube-vm at 192.168.99.100
 
 # Cluster Version
 [user@minikube ~]$ kubectl version
-Client Version: version.Info{Major:"1", Minor:"12", GitVersion:"v1.12.1", GitCommit:"4ed3216f3ec431b140b1d899130a69fc671678f4", GitTreeState:"clean", BuildDate:"2018-10-05T16:46:06Z", GoVersion:"go1.10.4", Compiler:"gc", Platform:"linux/amd64"}
-Server Version: version.Info{Major:"1", Minor:"10", GitVersion:"v1.10.0", GitCommit:"fc32d2f3698e36b93322a3465f63a14e9f0eaead", GitTreeState:"clean", BuildDate:"2018-03-26T16:44:10Z", GoVersion:"go1.9.3", Compiler:"gc", Platform:"linux/amd64"}
-
+Client Version: version.Info{Major:"1", Minor:"13", GitVersion:"v1.13.2", GitCommit:"cff46ab41ff0bb44d8584413b598ad8360ec1def", GitTreeState:"clean", BuildDate:"2019-01-10T23:35:51Z", GoVersion:"go1.11.4", Compiler:"gc", Platform:"linux/amd64"}
+Server Version: version.Info{Major:"1", Minor:"12", GitVersion:"v1.12.4", GitCommit:"f49fa022dbe63faafd0da106ef7e05a29721d3f1", GitTreeState:"clean", BuildDate:"2018-12-14T06:59:37Z", GoVersion:"go1.10.4", Compiler:"gc", Platform:"linux/amd64"}
 ```
 
 {% hint style="info" %}
@@ -100,11 +98,49 @@ controller-manager   Healthy   ok
 scheduler            Healthy   ok
 etcd-0               Healthy   {"health": "true"}
 
+
 # K8s node
 [user@minikube ~]$ kubectl get node
 NAME       STATUS   ROLES    AGE   VERSION
-minikube   Ready    master   3h    v1.10.0
-[user@minikube ~]$
+minikube   Ready    master   3m    v1.12.4
+
+
+[user@minikube ~]$ kubectl get pods --all-namespaces
+NAMESPACE     NAME                                    READY   STATUS    RESTARTS   AGE
+kube-system   coredns-576cbf47c7-9gl6h                1/1     Running   0          4m31s
+kube-system   coredns-576cbf47c7-rrgf4                1/1     Running   0          4m31s
+kube-system   etcd-minikube                           1/1     Running   0          3m41s
+kube-system   kube-addon-manager-minikube             1/1     Running   0          3m34s
+kube-system   kube-apiserver-minikube                 1/1     Running   0          3m36s
+kube-system   kube-controller-manager-minikube        1/1     Running   0          3m34s
+kube-system   kube-proxy-8mzz2                        1/1     Running   0          4m31s
+kube-system   kube-scheduler-minikube                 1/1     Running   0          3m34s
+kube-system   kubernetes-dashboard-5bff5f8fb8-9dbng   1/1     Running   0          4m29s
+kube-system   storage-provisioner                     1/1     Running   0          4m29s
+
+
+[user@minikube ~]$ kubectl get services --all-namespaces
+NAMESPACE     NAME                   TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)         AGE
+default       kubernetes             ClusterIP   10.96.0.1       <none>        443/TCP         6m18s
+kube-system   kube-dns               ClusterIP   10.96.0.10      <none>        53/UDP,53/TCP   6m14s
+kube-system   kubernetes-dashboard   ClusterIP   10.109.91.186   <none>        80/TCP          6m4s
+
+
+[user@minikube ~]$ kubectl get deployments --all-namespaces
+NAMESPACE     NAME                   DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+kube-system   coredns                2         2         2            2           6m57s
+kube-system   kubernetes-dashboard   1         1         1            1           6m47s
+
+
+[user@minikube ~]$ kubectl get daemonsets --all-namespaces
+NAMESPACE     NAME         DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR   AGE
+kube-system   kube-proxy   1         1         1       1            1           <none>          7m23s
+
+
+[user@minikube ~]$ kubectl get replicasets --all-namespaces
+NAMESPACE     NAME                              DESIRED   CURRENT   READY   AGE
+kube-system   coredns-576cbf47c7                2         2         2       8m18s
+kube-system   kubernetes-dashboard-5bff5f8fb8   1         1         1       8m16s
 ```
 
 ### 部署第一個 service / pod
