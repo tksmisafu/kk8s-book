@@ -60,9 +60,32 @@ ExecStart=/usr/bin/kubelet $KUBELET_KUBECONFIG_ARGS $KUBELET_CONFIG_ARGS $KUBELE
 協助我找到問題的原因，除了上述 log 資訊，另外透過 Google 搜尋查看下列文章，補強我的觀念 [https://blog.csdn.net/zzq900503/article/details/81710319](https://blog.csdn.net/zzq900503/article/details/81710319)  
 以上，解決了 kubeadm init 失敗的原因了
 
+### 2019.01.17 番外篇：關於 docker cgroup
+
+```bash
+如使用 docker CRI，則需查看 docker cgroup-driver 資訊：
+方式一  $ less /etc/docker/daemon.json
+方式二  $ sudo docker info |grep Cgroup
+          Cgroup Driver: systemd
+依循查到的 cgroup 而決定 K8s 引用什麼 --cgroup-driver=systemd | cgroupfs
+
+查看目前 k8s 啟用的 cgroup
+$ sudo less /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
+  >>  10-kubeadm.conf 裡頭有引用下面 flags.env，裡頭有 cgroup driver 設定
+$ sudo less /var/lib/kubelet/kubeadm-flags.env
+
+# 提醒
+# 因 kubelet config file 有異動，必須進行 reload & restart kubelet
+$ sudo systemctl daemon-reload
+$ sudo systemctl restart kubelet
+```
+
 {% hint style="info" %}
 kubelet config file：  
 /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
+
+官網說明：  
+[https://kubernetes.io/docs/setup/independent/\#configure-cgroup-driver-used-by-kubelet-on-master-node](https://kubernetes.io/docs/setup/independent/#configure-cgroup-driver-used-by-kubelet-on-master-node)
 {% endhint %}
 
 ### 重新 kubeadm init

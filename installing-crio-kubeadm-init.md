@@ -37,8 +37,15 @@
 #### Prerequisites <a id="prerequisites"></a>
 
 ```bash
+# 即刻啟用 module 方式
 sudo modprobe overlay
 sudo modprobe br_netfilter
+
+# 開機啟用 module 方式
+echo br_netfilter > /etc/modules-load.d/br_netfilter.conf
+
+# 查看啟用的 module
+lsmod |grep br_netfilter
 
 # Setup required sysctl params, these persist across reboots.
 [vagrant@kk8s-1 ~]$ sudo vi /etc/sysctl.d/k8s.conf
