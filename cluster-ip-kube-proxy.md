@@ -1,4 +1,4 @@
-# Service 續集之 Cluster IP、Kube-proxy
+# Service 續集之 Cluster IP、Kube-proxy、LoadBalancer
 
 讀過了幾遍及翻了網路文章，才有這個開門見山的心得：  
 cluster ip 是在建立 service 物件時由 K8s API 伺服器所分配。

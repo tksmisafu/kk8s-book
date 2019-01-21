@@ -19,7 +19,7 @@
 * [淺談 DaemonSet，及相對 ReplicaSet 的差異](daemonset-note.md)
 * [來說說 Label](label-note.md)
 * [從 Label 再回頭談 Service](label-to-service.md)
-* [Service 續集之 Cluster IP、Kube-proxy](cluster-ip-kube-proxy.md)
+* [Service 續集之 Cluster IP、Kube-proxy、LoadBalancer](cluster-ip-kube-proxy.md)
 * [從 Service 發現 K8s 網路層全貌](k8s-service-networking.md)
 * [Container Data Persistent](container-data-persistent.md)
 * [發現、初談 StatefulSet](statefulset-1.md)
