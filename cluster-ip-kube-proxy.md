@@ -59,6 +59,8 @@ LoadBalancer 此 service type 適用於雲端 Kubernetes 環境中，例如 GKE�
 在 K8s service 部署於雲端環境中，如需暴露 service 供外界存取，即需用此。  
 設定方式，僅須將 `type` 指定為 `LoadBalancer`。
 
+#### 限制存取
+
 另外，雖然需要暴露 service 供外部存取，但如僅需開放特定來源存取，可透過 `loadBalancerSourceRanges`參數指定來源 IP，即可限度性的開放服務。
 
 ```yaml
