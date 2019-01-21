@@ -53,9 +53,31 @@ spec:
 這一篇的研讀，讓我更加明瞭 Service 是怎麼一回事情，也很感謝下列官方、網友文章的解說，讓我有所學習與突破。
 {% endhint %}
 
+### 關於 LoadBalancer
+
+LoadBalancer 此 service type 適用於雲端 Kubernetes 環境中，例如 GKE，  
+在 K8s service 部署於雲端環境中，如需暴露 service 供外界存取，即需用此。  
+設定方式，僅須將 `type` 指定為 `LoadBalancer`。
+
+另外，雖然需要暴露 service 供外部存取，但如僅需開放特定來源存取，可透過 `loadBalancerSourceRanges`參數指定來源 IP，即可限度性的開放服務。
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: myapp
+spec:
+  type: LoadBalancer
+  loadBalancerSourceRanges:
+  - 1.2.3.4/32
+  - 5.6.7.8/32
+```
+
 {% hint style="info" %}
 參考書籍\文章出處：   
 Kubernetes 建置與執行 書中 P.88-89 內容。  
-[https://kubernetes.io/docs/concepts/services-networking/service/](https://kubernetes.io/docs/concepts/services-networking/service/) [https://feisky.gitbooks.io/kubernetes/concepts/service.html](https://feisky.gitbooks.io/kubernetes/concepts/service.html) [https://feisky.gitbooks.io/kubernetes/components/kube-proxy.html](https://feisky.gitbooks.io/kubernetes/components/kube-proxy.html)
+[https://kubernetes.io/docs/concepts/services-networking/service/](https://kubernetes.io/docs/concepts/services-networking/service/) [https://feisky.gitbooks.io/kubernetes/concepts/service.html](https://feisky.gitbooks.io/kubernetes/concepts/service.html) [https://feisky.gitbooks.io/kubernetes/components/kube-proxy.html](https://feisky.gitbooks.io/kubernetes/components/kube-proxy.html)  
+關於 LoadBalancer、loadBalancerSourceRanges  
+[https://kubernetes.io/docs/tasks/access-application-cluster/configure-cloud-provider-firewall/](https://kubernetes.io/docs/tasks/access-application-cluster/configure-cloud-provider-firewall/)
 {% endhint %}
 
