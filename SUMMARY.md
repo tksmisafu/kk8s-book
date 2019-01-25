@@ -24,6 +24,7 @@
 * [Container Data Persistent](container-data-persistent.md)
 * [發現、初談 StatefulSet](statefulset-1.md)
 * [再談 StatefulSet](statefulset-2.md)
+* [認識 configMap](configmap.md)
 * [第一次使用 Play with Kubernetes](first-play-with-k8s.md)
 * [手工 Installing kubeadm](installing-kubeadm.md)
 * [手工 Installing CRI-O、kubeadm init](installing-crio-kubeadm-init.md)
@@ -31,7 +32,10 @@
 * [Installing a pod network add-on](installing-a-pod-network-add-on.md)
 * [K8s add Nodes（join）](k8s-add-nodes-join.md)
 * [驗證自建的 K8s](verification-kk8s.md)
-* [kubectl describe nodes](untitled.md)
-* [kubectl get 筆記](kubectl-get.md)
-* [kubectl 部署筆記](kubectl-bu-shu.md)
+
+## 筆記
+
+* [kubectl get 筆記](undefined/kubectl-get.md)
+* [kubectl 部署筆記](undefined/kubectl-bu-shu.md)
+* [kubectl describe nodes](undefined/untitled-1.md)
 
