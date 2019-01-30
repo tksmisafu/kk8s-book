@@ -70,6 +70,20 @@ Everything looks great. Please enjoy minikube!
 
 ```
 
+#### 啟動前配置
+
+```bash
+# 啟動前，設定 minikube 佔用多少記憶體
+minikube config set memory 4096
+
+# 觀察 minikube 啟動時佔用多少記憶體
+minikube config get memory
+4096
+
+minikube config view memory
+- memory: 4096
+```
+
 ### 觀察 K8s狀態
 
 ```bash
