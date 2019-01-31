@@ -183,6 +183,30 @@ kubernetes       ClusterIP   10.96.0.1       <none>        443/TCP          4h
 [user@minikube ~]$
 ```
 
+### 部署 Nginx
+
+```bash
+kubectl create deployment nginx --image=nginx
+
+kubectl get deployments
+
+kubectl port-forward --address 0.0.0.0 deployment.apps/nginx 30333:80
+
+kubectl get deployment/nginx -o yaml > deployment-nginx.yaml
+```
+
+### 部署 Nginx + ConfigMap
+
+```bash
+# 準備好設定檔案 nginx.conf
+kubectl create configmap nginx-config --from-file=nginx.conf
+# 準備好 Nginx pod(內有配置configMap)
+kubectl apply -f nginx-config-pod.yaml
+# 觀察 pod 狀態、查看 pod log
+kubectl get pod
+kubectl logs nginx-config
+```
+
 ### 測試 Service運行狀況
 
 ```bash
