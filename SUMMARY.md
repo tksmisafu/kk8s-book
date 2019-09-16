@@ -42,4 +42,5 @@
 ## 實務記憶篇 <a id="task-memory"></a>
 
 * [整理下記憶](task-memory/half-year-memory.md)
+* [有哪些 Kubernetes 服務](task-memory/cloud-kubernetes-info.md)
 
