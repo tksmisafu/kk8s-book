@@ -39,7 +39,7 @@
 * [kubectl 部署筆記](undefined/kubectl-bu-shu.md)
 * [kubectl describe nodes](undefined/untitled-1.md)
 
-## 實務記憶篇
+## 實務記憶篇 <a id="task-memory"></a>
 
-* [整理下記憶](shi-wu-ji-yi-pian/half-year-memory.md)
+* [整理下記憶](task-memory/half-year-memory.md)
 
