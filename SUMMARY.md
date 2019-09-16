@@ -33,9 +33,13 @@
 * [K8s add Nodes（join）](k8s-add-nodes-join.md)
 * [驗證自建的 K8s](verification-kk8s.md)
 
-## 筆記
+## 筆記 <a id="undefined"></a>
 
 * [kubectl get 筆記](undefined/kubectl-get.md)
 * [kubectl 部署筆記](undefined/kubectl-bu-shu.md)
 * [kubectl describe nodes](undefined/untitled-1.md)
+
+## 實務記憶篇
+
+* [整理下記憶](shi-wu-ji-yi-pian/half-year-memory.md)
 
