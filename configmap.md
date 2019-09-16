@@ -1,4 +1,17 @@
-# 認識 configMap
+# 認識 ConfigMap
+
+ConfigMap 此定義檔內容，記載了軟體運行中所需要的：`設定、環境變數、指令`等等影響著軟體運作的必載元件。  
+這樣的設計可以很明確將設定檔案抽離出來，方便用來管理軟體運作。  
+ConfigMap 很適合用來存放**「非敏感性」**的未加密設定資訊，如有敏感性資料，則需透過 Secret。  
+某程度上 ConfigMap 也是實現 infrastructure as code 精神上的一環。
+
+K8s 上，軟體就是 pod、設定檔案就是 ConfigMap。  
+建立 ConfigMap 的指令：
+
+```text
+kubectl create configmap [NAME] [DATA]
+kubectl apply configmap.yaml
+```
 
 ## Examples
 

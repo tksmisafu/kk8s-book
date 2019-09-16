@@ -24,7 +24,7 @@
 * [Container Data Persistent](container-data-persistent.md)
 * [發現、初談 StatefulSet](statefulset-1.md)
 * [再談 StatefulSet](statefulset-2.md)
-* [認識 configMap](configmap.md)
+* [認識 ConfigMap](configmap.md)
 * [第一次使用 Play with Kubernetes](first-play-with-k8s.md)
 * [手工 Installing kubeadm](installing-kubeadm.md)
 * [手工 Installing CRI-O、kubeadm init](installing-crio-kubeadm-init.md)
