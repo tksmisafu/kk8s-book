@@ -21,7 +21,7 @@ VMware 部落格這樣的敘述自家 PKS 服務，請詳閱連結：
 * **阿里云 Kubernetes**
 * **腾讯云容器服务 TKE**
 
-回到主題：Google 雲服務的 Google Kubernetes Engine 簡稱 GKE  
+回到我後續要說的目標：Google 雲服務的 Google Kubernetes Engine 簡稱 GKE  
 我不是業務代表，有關 GKE 的敘述就由官方資訊頁來呈現：
 
 > ### [KUBERNETES ENGINE 以可靠、高效、安全的方式執行 Kubernetes 叢集](https://cloud.google.com/kubernetes-engine/)
