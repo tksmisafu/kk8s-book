@@ -43,4 +43,5 @@
 
 * [整理下記憶](task-memory/half-year-memory.md)
 * [有哪些 Kubernetes 雲端服務](task-memory/cloud-kubernetes-info.md)
+* [如何從本機連線至 GKE Pod](task-memory/connect-to-gke-pod.md)
 

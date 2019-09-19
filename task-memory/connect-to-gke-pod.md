@@ -1,0 +1,58 @@
+# 如何從本機連線至 GKE Pod
+
+部署應用程式在 K8s 中，最基本單位是 Pod，Pod 裏頭就是 Container，原則上是 1個 Container 在 pod 裏頭，也可以 2個以上。Pod 邏輯概念圖如下
+
+![Pod diagram](../.gitbook/assets/pod.svg)
+
+### Pod 如何連線？
+
+在雲端 K8s 平台 \(例如GKE\) 上建立 pod 之後，可以透過兩個指令`kubectl exec`、`kubectl port-forward`作為應用服務的遠端連線管道。
+
+雖是都可遠端連線，但這兩個指令略有不同用途～
+
+* `kubectl exec`在本機針對遠端的 pod 進行遠端登入、管理用途，如同`docker exec`ㄧ樣用法。
+* `kubectl port-forward`在本機針對遠端的 pod 透過網路層，進行網路第四層轉導至本機上，例如遠端 **Redis tcp 6379** 可在本機 tcp 6379 進行 redis-cli 連線。
+
+### 示範 `kubectl exec`
+
+```yaml
+# 首先建立應用服務 busybox
+kubectl apply -f busybox.yaml
+
+# 查看 busybox pod
+kubectl get pod
+NAME      READY   STATUS    RESTARTS   AGE
+busybox   1/1     Running   0          108s
+
+# 遠端連線至 busybox pod，執行應用程式指令 ping
+kubectl exec -i --tty busybox -- sh
+/ # ping 8.8.8.8
+PING 8.8.8.8 (8.8.8.8): 56 data bytes
+64 bytes from 8.8.8.8: seq=0 ttl=51 time=1.300 ms
+64 bytes from 8.8.8.8: seq=1 ttl=51 time=0.353 ms
+```
+
+### 示範 `kubectl port-forward`
+
+```yaml
+# 建立 redis pod 應用程式
+kubectl apply -f redis-master.yaml
+
+# 查看 redis pod 應用程式(pod name = redis-master-ID)
+kubectl get pod
+NAME                            READY   STATUS    RESTARTS   AGE
+busybox                         1/1     Running   0          24m
+redis-master-57fc67768d-p7dg4   1/1     Running   0          38s
+
+# 建立遠端 pod 網路層連線至本機上
+kubectl port-forward redis-master-57fc67768d-p7dg4 6379:6379
+
+# 測試連線
+telnet localhost 6379
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
+```
+
+以上，簡單說明應用程式透過 pod 建立後，在沒有開放性的服務存取閘道機制下，如何從本機上進行遠端連線、遠端管理。
+
