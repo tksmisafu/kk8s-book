@@ -45,5 +45,5 @@
 * [有哪些 Kubernetes 雲端服務](task-memory/cloud-kubernetes-info.md)
 * [如何從本機連線至 GKE Pod](task-memory/connect-to-gke-pod.md)
 * [GCP Memorystore 服務介紹](task-memory/gcp-memorystore-info.md)
-* [如何連線至 GCP Memorystore](task-memory/ru-he-lian-xian-zhi-gcp-memorystore.md)
+* [如何連線至 GCP Memorystore](task-memory/connect-to-gcp-memorystore.md)
 
