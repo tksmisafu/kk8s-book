@@ -44,7 +44,7 @@
 * [整理下記憶](task-memory/1.half-year-memory.md)
 * [有哪些 Kubernetes 雲端服務](task-memory/2.cloud-kubernetes-info.md)
 * [如何從本機連線至 GKE Pod](task-memory/3.connect-to-gke-pod.md)
-* [GCP Memorystore 服務介紹](task-memory/gcp-memorystore-info.md)
-* [如何連線至 GCP Memorystore](task-memory/connect-to-gcp-memorystore.md)
-* [GCP Cloud SQL 服務介紹](task-memory/gcp-cloud-sql-info.md)
+* [GCP Memorystore 服務介紹](task-memory/4.gcp-memorystore-info.md)
+* [如何連線至 GCP Memorystore](task-memory/5.connect-to-gcp-memorystore.md)
+* [GCP Cloud SQL 服務介紹](task-memory/6.gcp-cloud-sql-info.md)
 
