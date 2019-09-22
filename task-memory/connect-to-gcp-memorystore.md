@@ -5,11 +5,12 @@
 ### Redis 網路連線屬性
 
 如下圖所示，GCP Memorystore Redis 服務僅提供內部網路 IP 網段。  
-此 Redis 服務可以從 GKE 上的應用程式 pod 發起連線。  
-也可從 GCP Instance 上對此 Redis 進行連線，下面說明**開發者如何連線**，就與 GCP Instance 有所關聯。  
 
 
 ![](../.gitbook/assets/ying-mu-kuai-zhao-20190920-shang-wu-1.42.41.png)
+
+此 Redis 服務可以從 GKE 上的應用程式 pod 發起連線。_\(此部分會獨立於另一篇說明\)_  
+也可從 GCP Instance 上對此 Redis 進行連線，下面說明**開發者如何連線**，就與 GCP Instance 有所關聯。
 
 ### 開發者如何連線
 
