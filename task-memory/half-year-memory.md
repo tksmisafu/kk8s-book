@@ -13,7 +13,7 @@ description: 將工作上圍繞在 Kubernetes 平台上的相關歷程，來寫�
 | GCP Kubernetes 服務介紹 | 如何從本機連線至 GKE pod |
 | :--- | :--- |
 |  | GCP Memorystore 服務介紹 |
-|  | 如何從本機連線至 redis |
+|  | 如何連線至 GCP Memorystore |
 |  | GCP SQL 服務介紹 |
 |  | 如何從本機連線至 MySQL |
 |  | GKE pod 如何串接 MySQL\Redis 服務 |

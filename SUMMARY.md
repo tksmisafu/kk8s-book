@@ -46,4 +46,5 @@
 * [如何從本機連線至 GKE Pod](task-memory/connect-to-gke-pod.md)
 * [GCP Memorystore 服務介紹](task-memory/gcp-memorystore-info.md)
 * [如何連線至 GCP Memorystore](task-memory/connect-to-gcp-memorystore.md)
+* [GCP Cloud SQL 服務介紹](task-memory/gcp-cloud-sql-info.md)
 
