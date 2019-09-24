@@ -48,4 +48,5 @@
 * [如何連線至 GCP Memorystore](task-memory/5.connect-to-gcp-memorystore.md)
 * [GCP Cloud SQL 服務介紹](task-memory/6.gcp-cloud-sql-info.md)
 * [如何連線至 Cloud SQL](task-memory/7.connect-to-cloud-sql.md)
+* [關於 GCP VPC 網路](task-memory/guan-wu-gcp-vpc-wang-lu.md)
 
