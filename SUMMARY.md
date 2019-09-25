@@ -49,5 +49,5 @@
 * [GCP Cloud SQL 服務介紹](task-memory/6.gcp-cloud-sql-info.md)
 * [如何連線至 Cloud SQL](task-memory/7.connect-to-cloud-sql.md)
 * [關於 GCP VPC 網路](task-memory/8.about-gcp-vpc.md)
-* [HELM 工具用途](task-memory/helm-tool-use.md)
+* [HELM 工具用途](task-memory/9.helm-tool-use.md)
 
