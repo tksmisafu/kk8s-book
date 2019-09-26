@@ -50,4 +50,5 @@
 * [如何連線至 Cloud SQL](task-memory/7.connect-to-cloud-sql.md)
 * [關於 GCP VPC 網路](task-memory/8.about-gcp-vpc.md)
 * [HELM 工具用途](task-memory/9.helm-tool-use.md)
+* [臨時題目：查修 prometheus](task-memory/10.troubleshooting-prometheus.md)
 
