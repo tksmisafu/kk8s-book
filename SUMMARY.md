@@ -51,4 +51,6 @@
 * [關於 GCP VPC 網路](task-memory/8.about-gcp-vpc.md)
 * [HELM 工具用途](task-memory/9.helm-tool-use.md)
 * [臨時題目：查修 prometheus](task-memory/10.troubleshooting-prometheus.md)
+* [繼續離題：繼續查修Prometheus](task-memory/p2.md)
+* [P3](task-memory/p3.md)
 
