@@ -18,28 +18,33 @@ stable  	https://kubernetes-charts.storage.googleapis.com
 
 ### 主要特色
 
-* 一個已時間時序為主的多維度資料模型，以Metric資料名稱與key/values來呈現。
-* 透過PromQL查詢語言，取得時序資料。
+* 一個已時間時序為主的多維度資料模型，以`Metric`資料名稱與`key/values`來呈現。
+* 透過`PromQL`查詢語言，取得時序資料。
 * 不需依賴分佈式存儲，單節點儲存即可。
-* 透過HTTP協定PULL模式收集時序資料。
-* 透過Push Gateway角色，支持推送時序資料。
-* 通過 "服務發現" 或 "靜態配置" 去確認監控Targets。
+* 透過`HTTP`協定`pull`模式收集時序資料。
+* 透過`PushGateway`角色，支持推送時序資料。
+* 通過 "**服務發現**" 或 "**靜態配置**" 去確認監控`Targets`。
 * 支援多種圖形和儀表板。
 
 ### 元件
 
-* **Prometheus Server**：主要服務角色，收集與儲存時序資料，藉由提供PromQL語言支援資料查詢。
-* **Pushgateway**：主要用於臨時性 Job 推送。這類 Job 存在期間較短，有可能 Prometheus 來 Pull 時就消失，因此透過一個閘道來推送。適合用於服務層面的 Metrics。
-* **Exporter**：針對特定應用程式而開發的Exporter，用來曝露該應用程式的Metric給 Prometheus Server，即以 Client Library 開發的 HTTP server。縱多的官方、第三方exporter可參考官方 [Exporters and integrations](https://prometheus.io/docs/instrumenting/exporters/)。
-* **AlertManager**：收集來至 Prometheus Server 的 Alert event，並可整合第三方、自訂的告警模式來發送警報，例如：Slack、E-mail、與其他 Webhook 等等。
+* **Prometheus Server**：主要服務角色，收集與儲存時序資料，藉由提供`PromQL`語言支援資料查詢。
+* **PushGateway**：主要用於臨時性 Job 推送。這類 Job 存在期間較短，有可能`Prometheus` 來 Pull 時就消失，因此透過一個`PushGateway`來推送。適合用於服務層面的 Metrics。
+* **Exporter**：針對特定應用程式而開發的`Exporter`，用來曝露該應用程式的`Metric`給 `Prometheus Server`，即以 **Client Library** 開發的 HTTP server。縱多的官方、第三方exporter可參考官方 [Exporters and integrations](https://prometheus.io/docs/instrumenting/exporters/)。
+* **AlertManager**：收集來自`Prometheus Server`的`Alert event`，並可整合第三方、自訂的告警模式來發送警報，例如：**Slack**、**E-mail**、與其他 **Webhook** 等等。
 
 ### 架構
 
 ![](../.gitbook/assets/image%20%281%29.png)
 
-* Prometheus Server 獲取的時序資料來源有：ServiceDiscovery、PushGateway、Exporter。
-* 獲取到的時序資料，儲存在本機磁碟中，此時序資料稱為TSDB。
-* Prometheus Server可定義PrometheusRules作為判斷時序資料內容、數值，如有符合規則即可發出告警事件給予AlertManager。
+#### 運作概念
+
+* **Prometheus Server** 獲取的時序資料來源有：`ServiceDiscovery`、`PushGateway`、`Exporter`。
+* 獲取到的Metric資料，儲存在本機磁碟中，此資料稱為**時序資料庫**`TSDB`。
+* **Prometheus Server** 可定義PrometheusRules作為判斷時序資料內容、數值，如有符合規則即可發出告警事件給予 **AlertManager**。
+* **AlertManager** 可定義收到的告警事件如何分類、處理重告警、發送管道等等。
+* **Prometheus Server** 本身提供`http`服務，可讓支援`PromQL`的查詢者取得所需的時序資料。
+* 承上，例如 **Grafana** 即透過`PromQL`語言查詢時序資料，並且繪製圖表。
 
 
 
