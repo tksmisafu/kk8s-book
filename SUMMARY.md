@@ -53,4 +53,5 @@
 * [臨時題目：查修 prometheus](task-memory/10.troubleshooting-prometheus.md)
 * [繼續離題：繼續查修Prometheus](task-memory/11.troubleshooting-prometheus.md)
 * [P3](task-memory/p3.md)
+* [監控數據來源 Prometheus](task-memory/about-prometheus.md)
 
