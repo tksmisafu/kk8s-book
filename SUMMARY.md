@@ -52,6 +52,6 @@
 * [HELM 工具用途](task-memory/9.helm-tool-use.md)
 * [臨時題目：查修 prometheus](task-memory/10.troubleshooting-prometheus.md)
 * [繼續離題：繼續查修Prometheus](task-memory/11.troubleshooting-prometheus.md)
-* [P3](task-memory/p3.md)
-* [監控數據來源 Prometheus](task-memory/about-prometheus.md)
+* [臨時題目：限定 Pod 訪問外網時，固定 public ip](task-memory/12.cloud-nat-info.md)
+* [K8s 監控數據來源 Prometheus](task-memory/13.about-prometheus.md)
 
