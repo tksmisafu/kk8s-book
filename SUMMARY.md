@@ -54,4 +54,5 @@
 * [繼續離題：繼續查修Prometheus](task-memory/11.troubleshooting-prometheus.md)
 * [臨時題目：限定 Pod 訪問外網時，固定 public ip](task-memory/12.cloud-nat-info.md)
 * [K8s 監控數據來源 Prometheus](task-memory/13.about-prometheus.md)
+* [監控要告警啊 AlertManager](task-memory/14.alertmanager-info.md)
 
