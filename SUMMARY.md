@@ -56,4 +56,6 @@
 * [K8s 監控數據來源 Prometheus](task-memory/13.about-prometheus.md)
 * [監控要告警啊 AlertManager](task-memory/14.alertmanager-info.md)
 * [監控要有圖表啊 Grafana](task-memory/15.grafana-info.md)
+* [Grafana收集Kubernetes系統資訊](task-memory/16.grafana-k8s.md)
+* [系統 Log 資料收集至 EFK](task-memory/xi-tong-log-zi-liao-shou-ji-zhi-efk.md)
 
