@@ -58,4 +58,5 @@
 * [監控要有圖表啊 Grafana](task-memory/15.grafana-info.md)
 * [Grafana收集Kubernetes系統資訊](task-memory/16.grafana-k8s.md)
 * [系統 Log 資料](task-memory/17.system-log-info.md)
+* [系統 Log 資料收集至 EFK](task-memory/18.log-output-efk.md)
 
