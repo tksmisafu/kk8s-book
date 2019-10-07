@@ -61,4 +61,5 @@
 * [系統 Log 資料收集至 EFK](task-memory/18.log-output-efk.md)
 * [關於 EFK 角色](task-memory/19.efk-role.md)
 * [系統 Log 資料 - fluent-bit 串接](task-memory/20.fluent-bit.md)
+* [開放網站對外存取](task-memory/21.web-ingress.md)
 
