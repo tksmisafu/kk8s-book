@@ -62,4 +62,5 @@
 * [關於 EFK 角色](task-memory/19.efk-role.md)
 * [系統 Log 資料 - fluent-bit 串接](task-memory/20.fluent-bit.md)
 * [開放網站對外存取](task-memory/21.web-ingress.md)
+* [網站提供 https 安全連線服務](task-memory/22.web-https-ingress.md)
 
