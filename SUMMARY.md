@@ -63,4 +63,5 @@
 * [系統 Log 資料 - fluent-bit 串接](task-memory/20.fluent-bit.md)
 * [開放網站對外存取](task-memory/21.web-ingress.md)
 * [網站提供 https 安全連線服務 - 憑證管理](task-memory/22.web-https-certificates.md)
+* [網站提供 https 安全連線服務 - 憑證與Ingress整合](task-memory/23.ingress-ssl-secret.md)
 
