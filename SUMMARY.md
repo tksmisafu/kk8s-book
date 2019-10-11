@@ -65,5 +65,5 @@
 * [網站提供 https 安全連線服務 - 憑證管理](task-memory/22.web-https-certificates.md)
 * [網站提供 https 安全連線服務 - 憑證與Ingress整合](task-memory/23.ingress-ssl-secret.md)
 * [網站提供 https 安全連線服務 - Istio 範例](task-memory/24.https-istio-ingressgateway.md)
-* [Untitled](task-memory/untitled-1.md)
+* [需要額外的 非http 連線](task-memory/25.ingress-exposing-tcp.md)
 
