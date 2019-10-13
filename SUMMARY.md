@@ -67,4 +67,5 @@
 * [網站提供 https 安全連線服務 - Istio 範例](task-memory/24.https-istio-ingressgateway.md)
 * [需要額外的 非http 連線](task-memory/25.ingress-exposing-tcp.md)
 * [Istio 初略介紹](task-memory/26.istio-info.md)
+* [Istio 整合 Certmanager DNS01](task-memory/27.istio-certmanager-dns01.md)
 
