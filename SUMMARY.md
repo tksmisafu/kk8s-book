@@ -68,7 +68,7 @@
 * [需要額外的 非http 連線](task-memory/25.ingress-exposing-tcp.md)
 * [Istio 初略介紹](task-memory/26.istio-info.md)
 * [Istio 整合 Certmanager DNS01](task-memory/27.istio-certmanager-dns01.md)
-* [Istio 如何限制訪問來源](task-memory/28.istio-rule.md)
+* [番外篇：Istio 如何限制訪問來源](task-memory/28.istio-rule.md)
 * [番外篇：如何擴充 PV PVC storage size](task-memory/29.expand-pv-pvc-storage-size.md)
 * [番外篇：如何利用 Binlog 還原資料庫](task-memory/30.binlog-recover-mysql.md)
 
