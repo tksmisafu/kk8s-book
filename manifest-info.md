@@ -13,7 +13,7 @@ hello-minikube-7c77b68cff-ncqmn   1/1     Running   1          4d
 # 內容很多，以下面圖片替代～
 ```
 
-![](.gitbook/assets/image%20%2816%29.png)
+![](.gitbook/assets/image%20%2817%29.png)
 
 ### manifest 檔案說明
 

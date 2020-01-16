@@ -72,3 +72,7 @@
 * [番外篇：如何擴充 PV PVC storage size](task-memory/29.expand-pv-pvc-storage-size.md)
 * [番外篇：如何利用 Binlog 還原資料庫](task-memory/30.binlog-recover-mysql.md)
 
+## Helm 實務學習心得
+
+* [Helm requirements.yaml 見解](helm-shi-wu-xue-xi-xin-de/helm-requirements.yaml-jian-jie.md)
+
