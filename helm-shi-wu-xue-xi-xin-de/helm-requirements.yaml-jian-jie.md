@@ -4,7 +4,7 @@
 
 ### Helm requirements 什麼用途
 
-Helm chart 基本用途就是單一應用服務的套件包概念，如同在使用 CentOS 中安裝單一套件概念依樣（yum install httpd），但如果有數個應用服務搭建成一套完整性系統，就需要多個 Chart，為此管理方便，便有了 requirements 相依性設計概念。
+Helm Chart 基本用途就是單一應用服務的套件包概念，如同在使用 CentOS 中安裝單一套件概念依樣（yum install httpd），但如果有數個應用服務搭建成一套完整性系統，就需要多個 Chart，為此管理方便，便有了 requirements 相依性設計概念。
 
 例如：我需要完整一套網站服務平台，需要「網站伺服器、快取服務、負載平衡服務、資料庫服務」，那就需要這些 chart：Nginx、PHP、Redis、HAProxy、MySQL 等等，  
 如果，你不想一個一個獨立安裝，則可以在主要的 chart 中建立 requirements.yaml 進行相依性管理，即可一次安裝上述服務套件。（此段敘述是我舉例。）
@@ -87,7 +87,7 @@ galley:
 # 以上僅是截取部分內容
 ```
 
-上述的 values.yaml 明確擷取出 Chart 的關鍵資訊：enabled: true \ false  
+上述的 values.yaml 明確擷取出 Chart 的關鍵資訊：`enabled: true \ false`  
 此部分影響著，該套件服務是否安裝。
 
 ### Chart \ requirements \ values 三項相依關係
@@ -176,7 +176,12 @@ gateways:
 Error: INSTALL FAILED: render error in "istio/charts/gateways/templates/serviceaccount.yaml": template: istio/charts/gateways/templates/serviceaccount.yaml:3:12: executing "istio/charts/gateways/templates/serviceaccount.yaml" at <$spec.enabled>: can't evaluate field enabled in type interface {}
 ```
 
+會出現錯誤的原因在於 values.yaml 內容中第三行`externalTrafficPolicy: Local`  
+在 `gateways` 作為第一階 values，`externalTrafficPolicy` 則被視為第二階 values，回顧上述 **實務心得2** 會發現，第二階代表著 $key，並且 helm 會解析 enabled 參數。
+
+> **很明顯，會出錯的原因就是誤將第二階設定為 key-value 組合鍵，helm 解析失敗。**
+
 這次的錯誤，讓我重新認識了 helm values \ requirements \ chart 三方的關聯。  
-學習到 Istio 如何應用多個 chart 服務的解決之道。  
+學習到 Istio 如何應用多個 chart 應用套件來部署 ISTIO 環境。  
 
 
