@@ -74,5 +74,5 @@
 
 ## Helm 實務學習心得
 
-* [Helm requirements.yaml 見解](helm-shi-wu-xue-xi-xin-de/helm-requirements.yaml-jian-jie.md)
+* [Helm requirements 見解](helm-shi-wu-xue-xi-xin-de/helm-requirements-review.md)
 

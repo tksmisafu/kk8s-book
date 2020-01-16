@@ -1,4 +1,4 @@
-# Helm requirements.yaml 見解
+# Helm requirements 見解
 
 有使用 Helm 套件來管理 Kubernetes 應用服務的人都知道，應用服務是被封裝在 Helm Chart 之中。
 
