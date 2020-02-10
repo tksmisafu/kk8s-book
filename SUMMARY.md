@@ -79,5 +79,5 @@
 
 ## Python
 
-* [11-1 Firebase 資料庫簡介](python/untitled.md)
+* [11-1 Firebase 資料庫簡介](python/11-1-firebase-describe.md)
 
