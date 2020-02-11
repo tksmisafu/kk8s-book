@@ -51,5 +51,60 @@ CAP理論的核心是：一個分布式系統不可能同時很好的滿足一�
 6. 試著去理解 index 的「原理」，也就是資料結構，這對於要怎麼用 index 絕對有強力的幫助。
 7. 當上面都做完而發現還是不夠的時候就 sharding 吧。
 
+### 課本實做筆記
+
+```bash
+pip install requests==1.1.0
+pip install python-firebase
+
+如果不小心安裝到 requests 2.x.x 版本，會出現很多模組匯入失敗，進而需要安裝下列模組
+pip install requests
+pip install python-jwt
+pip install gcloud
+pip install sseclient
+pip install pycrypto
+pip install cryptography
+pip install requests-toolbelt
+
+但即使安裝上述模組，最終仍會出現下列錯誤：
+
+Traceback (most recent call last):
+  File "11-1.py", line 4, in <module>
+    from firebase import firebase
+ImportError: cannot import name firebase
+```
+
+
+
+debug 筆記
+
+出現錯誤
+
+```bash
+Traceback (most recent call last):
+  File "11-2.py", line 4, in <module>
+    from firebase import firebase
+  File "/usr/local/lib/python2.7/site-packages/firebase/__init__.py", line 22, in <module>
+    from urllib.parse import urlencode, quote
+ImportError: No module named parse
+```
+
+解法
+
+```python
+修改 File "/usr/local/lib/python2.7/site-packages/firebase/__init__.py", line 22, in <module>
+第22行
+from urllib.parse import urlencode, quote
+
+修改如
+""
+# from urllib.parse import urlencode, quote
+try:
+    from urllib.parse import urlencode, quote
+except:
+    from urllib import urlencode, quote
+""
+```
+
 
 
