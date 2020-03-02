@@ -78,7 +78,7 @@ ImportError: cannot import name firebase
 
 debug 筆記
 
-出現錯誤1
+出現錯誤1: python 2.7
 
 ```python
 Traceback (most recent call last):
@@ -106,7 +106,7 @@ except:
 ""
 ```
 
-出現錯誤2
+出現錯誤2: python 3.8
 
 ```python
 Traceback (most recent call last):
