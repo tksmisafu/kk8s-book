@@ -78,9 +78,9 @@ ImportError: cannot import name firebase
 
 debug 筆記
 
-出現錯誤
+出現錯誤1
 
-```bash
+```python
 Traceback (most recent call last):
   File "11-2.py", line 4, in <module>
     from firebase import firebase
@@ -106,5 +106,25 @@ except:
 ""
 ```
 
+出現錯誤2
 
+```python
+Traceback (most recent call last):
+  File "11-2.py", line 4, in <module>
+    from firebase import firebase
+  File "/Users/afu/Library/Python/3.8/lib/python/site-packages/firebase/__init__.py", line 3
+    from .async import process_pool
+          ^
+SyntaxError: invalid syntax
+```
+
+解法
+
+```python
+cd /Users/afu/Library/Python/3.8/lib/python/site-packages/firebase/
+cp async.py async2.py
+vi __init__.py
+vi firebase.py
+
+```
 
